@@ -1,0 +1,16 @@
+
+@font-face {
+    font-family: MainFont;
+    src: url("../ttf/min.ttf");
+}
+
+body{
+    font-family: MainFont;
+    color: rgb(92,92,92);
+    margin: 0;
+}
+
+button, input, textarea, select
+{
+    outline: none;
+}

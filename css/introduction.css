@@ -1,0 +1,153 @@
+@charset "utf-8";
+@import "font.css";
+/* CSS Document */
+
+body{
+	text-align:center;
+	background-image:url("../img/StarlitSky.png");
+	background-size:cover;
+	
+    /*display: flex;*/
+    justify-content: center;
+}
+.hidden {
+	display:none;
+}
+	.swiper-container{
+		height:80%;
+		/*background-color:rgba(128, 236, 175, 0.9);
+		margin-bottom:5%;
+		padding-left:5%;
+		padding-right:5%;
+		padding-top:8px;
+		padding-bottom:8px;
+		/*border:#000000 thick solid;
+		border-radius: 12px;
+		text-align:left;
+		word-wrap: break-word;*/
+	}
+	.frame{
+		height:100%;
+		background-color:rgba(47,206,115,0.95);
+		margin-bottom:5%;
+		padding-left:5%;
+		padding-right:5%;
+		padding-top:8px;
+		padding-bottom:8px;
+		/*border: none;*/
+		border:#000000 thick solid;
+		border-radius: 12px;
+		text-align:left;
+		word-wrap: break-word;
+	}
+	h1{
+		color:rgb(75,88,64);
+		font-size:20px;
+		margin-top:4px;
+		margin-left:12px;
+		margin-bottom:6px;
+	}
+	p{
+		display:block;
+		color:rgb(75,88,64);
+		font-size:16px;
+		margin-top:6px;
+		margin-bottom:6px;
+	}
+	
+    #info-container {
+    	max-width: 400px;
+		width: 100%;
+		height: 100%;
+		position: relative;
+		left: 0%;
+		bottom: 0%;
+		margin-left: 0%;
+		margin-top: 20%;
+		margin-bottom: 0%;
+    }
+    .swiper-container {
+		display:block;
+		height:115%;
+    }
+    .swiper-slide {
+		/*display:block;*/
+        background-position: center;
+        background-size: cover;
+    }
+	#buttons{
+		z-index: 50;
+		width:100%;
+	}
+	button{
+		font-family: MainFont;
+		float: left;
+		width: 50%;
+		height:50px;
+		font-size: 1.5em;
+		line-height: 42px;
+		color:rgb(111,111,111);
+		background-color:rgba(47,206,115,0.95);
+		border:#000000 thick solid;
+		border-radius:12px;
+		margin-top: 4px;
+		margin-bottom:-50px;
+		transition: background-color 0.4s, color 0.4s;
+	}
+		button:hover{
+			/*border-color: rgb(96, 233, 124);*/
+			background-color: #6fc96f;
+			color: rgb(252, 243, 243);
+		}
+	.small{
+		margin-top: 6px;
+		margin-left: 2%;
+		height:28px;
+		display: block;
+		float: left;
+	}	
+	.star{
+		height:128px;
+		display: block;
+	}
+#back{
+	display:block;
+	margin-bottom:10%;
+}
+#pageUp{
+	display:block;
+	position:fixed;
+	background-image:url("../img/箭头左.png");
+}
+#pageDown{
+	display:block;
+	position:fixed;
+	background-image:url("../img/箭头右.png");
+}
+	@media screen and (max-width: 360px){
+		h1{font-size:18px;}
+	    p{font-size:14px;}
+	}
+	@media screen and (max-width: 330px){
+		h1{font-size:18px;}
+	    p{font-size:13px;}
+	}
+	@media screen and (max-width: 315px){
+		h1{font-size:16px;}
+	    p{font-size:12px;}
+	    button{font-size:1.2em;}
+	    .small{height:24px;margin-top: 8px;}
+	}
+	@media screen and (max-width: 275px){
+		h1{font-size:14px;}
+	    p{font-size:10px;}
+	    button{font-size:1.0em;}
+	    .small{height:22px;margin-top: 10px;}
+	}
+	@media screen and (max-width: 250px){
+		h1{font-size:14px;}
+	    p{font-size:8px;}
+	    button{font-size:0.8em;}
+	    .small{height:20px;margin-top: 12px;}
+	}
+

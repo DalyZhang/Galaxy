@@ -1,0 +1,72 @@
+@charset "utf-8";
+@import "font.css";
+/* CSS Document */
+
+body{
+	text-align:center;
+	background-image:url("../img/StarlitSky.png");
+	background-size:cover;
+}
+.hidden {
+	display:none;
+}
+#centerer {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+    justify-content: center;
+}
+	#container{
+        position: relative;
+        top: 5%;
+	}
+	.headBar{
+		width:100%;
+		display:block;
+	}
+	#headBar{
+		width:44%;
+		max-width: 400px;
+	}
+	#main{
+		margin-left:20%;
+		margin-right:20%;
+		margin-top:10%;
+		text-align:center;
+	}
+	button{
+		font-family: MainFont;
+		/*src: url("../腾祥睿黑简-W4.ttf");*/
+		font-size: 1.8em;
+		line-height: 50px;
+		display: block;
+		width:232px;
+		height:50px;
+		color:rgb(111,111,111);
+		background-color:rgb(119, 207, 145);
+		/*
+		border-color:#000000;
+		border-top-color:#737373;
+		border-left-color:#737373;
+		*/
+		border: none;
+		border-radius:12px;
+		margin-top:10%;
+		transition: background-color 0.4s, color 0.4s;
+	}
+		button:hover{
+			/*border-color: rgb(96, 233, 124);*/
+			background-color: #6fc96f;
+			color: rgb(252, 243, 243);
+		}
+	.small{
+		margin-top: 6px;
+		margin-left: 12px;
+		height:36px;
+		display: block;
+		float: left;
+	}
