@@ -6,7 +6,7 @@ function GameScene() {
 
 GameScene.Setting = {
     battleFieldSize : 300,
-    battleBackgroundImage : 'img/background.png',//'img/background.svg',
+    battleBackgroundImage : 'img/StarlitSky.png',//'img/background.svg',
     bigButton : 'img/button.png',//'img/background.svg',
 
     battleBackgroundColor : 'rgba(128,0,192,0.2)',

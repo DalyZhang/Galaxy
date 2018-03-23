@@ -1,10 +1,9 @@
 @charset "utf-8";
 @import "font.css";
-/* CSS Document */
 
 body{
 	text-align:center;
-	background-image:url(../img/background.svg);
+	background-image:url("../img/background.png");
 	background-size:cover;
 }
 .hidden {
@@ -33,75 +32,44 @@ body{
     width:100%;
     height:100%;
     z-index:25; 
-    background-color: rgba(255,255,255,0.25); 
-
+    background-color: rgba(255,255,255,0.25);
     justify-content: center;
 }
-	#container{
-        position: relative;
-        top: 35%;
-	}
-	#result {
-		width: 100%;
-	    color: rgb(255,255,255);
-	    font-size: 22px;
-	    text-align: center;
-	}
-	#score {
-	    color: rgb(128,255,128);
-	    font-size: 28px;
-	    font-weight: bold;
-	    text-align: left;
-	}
-	#main{
-		/*width: 50%;*/
-		/*margin-left:25%;*/
-		/*margin-right:25%;*/
-		width: 100%;
-		margin-left:20%;
-		margin-right:20%;
-		text-align:center;
-	}
-	button{
-		font-family: MainFont;
-		/*src: url("../腾祥睿黑简-W4.ttf");*/
-		font-size: 1.8em;
-		line-height: 50px;
-		display: block;
-		width:60%;
-		height:50px;
-		color:rgb(111,111,111);
-		background-color:rgb(119, 207, 145);
-		/*
-		border-color:#000000;
-		border-top-color:#737373;
-		border-left-color:#737373;
-		*/
-		border: none;
-		border-radius:12px;
-		margin-top:4%;
-		margin-bottom:4%;
-		transition: background-color 0.4s, color 0.4s;
-	}
-	/*
-	button{
-    	font-family: MainFont;
-		margin-top:3px;
-		margin-bottom:3px;
-		color:#000000;
-		background-color:#FFFFFF;
-		border-color:#000000;
-		border-top-color:#737373;
-		border-left-color:#737373;
-		border-radius:8px;
-		padding-top: 4px;
-		padding-bottom: 4px;
-		width: 100%;
-		font-size:20px;
-		transition: border-color 0.5s, background-color 0.5s, color 0.5s;
-	}*/
-		button:hover{
-			/*border-color: #FFFFFF;*/
-			background-color: #000000;
-			color: #FFFFFF;
-		}
+#container{
+	position: relative;
+	top: 35%;
+}
+#result {
+	width: 100%;
+	color: rgb(255,255,255);
+	font-size: 22px;
+	text-align: center;
+}
+#score {
+	color: rgb(128,255,128);
+	font-size: 28px;
+	font-weight: bold;
+	text-align: left;
+}
+#main{
+	width: 250px;
+	margin: auto;
+}
+button{
+	font-family: MainFont;
+	font-size: 30px;
+	line-height: 50px;
+	display: block;
+	width:250px;
+	height:50px;
+	color:rgba(121, 121, 121, 1);
+	background-color:rgba(56,247,138,1);
+	border: none;
+	border-radius:4px;
+	margin-top:4%;
+	margin-bottom:4%;
+}
+button:active{
+	background-color: rgba(35,155,87,1);
+	color: rgba(255, 255, 255, 1);
+}

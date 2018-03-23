@@ -147,7 +147,7 @@ RJO.Game.Recr.click(gotoMenu.bind(this));
 RJO.Game.Again.click(GameScene.restartGame.bind(GameScene));
 
 function gotoMenu(){
-	window.open("index.html", "_self");
+	window.open("index.php", "_self");
 }
 GameScene.hideGameOver();
 

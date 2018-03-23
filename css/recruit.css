@@ -1,6 +1,6 @@
 @charset "utf-8";
 @import "font.css";
-/* CSS Document */
+
 body{
 	text-align:center;
 	min-width: 300px;
@@ -16,11 +16,11 @@ body{
 	margin-right:10%;
 	text-align:center;
 }
-	#logo{
-		width:100%;
-		max-width: 808px;
-		display:inline;
-	}
+#logo{
+	width:100%;
+	max-width: 808px;
+	display:inline;
+}
 #centerer {
     position:absolute;
     left:0;
@@ -29,17 +29,17 @@ body{
     height:100%;
 	background-color:transparent;
 }
-    #alert-window {
-        position: relative;
-        z-index: 25;
-        top: 35%;
-        height: auto;
-        font-size: 24px;
-        text-align: center;
-        padding: 5px;
-        border: 3px solid rgba(192,192,192,0.75);
-        background-color: rgba(255,255,255,0.9);
-    }
+#alert-window {
+	position: relative;
+	z-index: 25;
+	top: 35%;
+	height: auto;
+	font-size: 24px;
+	text-align: center;
+	padding: 5px;
+	border: 3px solid rgba(192,192,192,0.75);
+	background-color: rgba(255,255,255,0.9);
+}
 	
 #main{
 	background-color:rgba(47,206,115,0.95);
@@ -50,12 +50,11 @@ body{
 	padding-top:8px;
 	padding-bottom:6px;
 	border:none;
-	border-radius: 12px;
+	border-radius: 4px;
 	font-size: 20px;
 	text-align:left;
 }
 .field {
-    /*color: rgb(112,112,112);*/
 	height: 32px;
 	font-size: 20px;
 	padding-top:6px;
@@ -63,87 +62,87 @@ body{
 	padding-left:104px; 
 	padding-right:4px; 
 }
-	.key {
-		display:inline; 
-		float:left;
-		width: 104px;
-		margin-left:-104px; 
-	}
-	.radioBox{
-		width:100%;
-		float:right;
-		font-size: 20px;
+.key {
+	display:inline; 
+	float:left;
+	width: 104px;
+	margin-left:-104px; 
+}
+.radioBox{
+	width:100%;
+	float:right;
+	font-size: 20px;
 
-		margin-top: -4px;
-	}
-	    .radio{
-	    	float: left;
-		    width: 45%;
-		    margin-right: 5%;
-	    }
-		    input[type="radio"] {
-		        display: none;
-		    }
-		    input[type="radio"]+label {
-		        display: inline-block;
-		        position: relative;
-		        top: 2px;
-		        width: 18px;
-		        height: 18px;
-		        background: url(../img/radiou.png) no-repeat;
-		        background-size: 100% 100%;
-		    }
-		    input[type="radio"]:checked+label {
-		        background-image: url(../img/radioc.png);
-		    }
-	.textBox{
-    	font-family: '微软雅黑';
-		width:100%;
-		height: 32px;
-		float:right;
-		font-size: 16px;
-		border:none;
-		border-radius: 4px;
+	margin-top: -4px;
+}
+.radio{
+	float: left;
+	width: 45%;
+	margin-right: 5%;
+}
+input[type="radio"] {
+	display: none;
+}
+input[type="radio"]+label {
+	display: inline-block;
+	position: relative;
+	top: 2px;
+	width: 18px;
+	height: 18px;
+	background: url("../img/radiou.png") no-repeat;
+	background-size: 100% 100%;
+}
+input[type="radio"]:checked+label {
+	background-image: url("../img/radioc.png");
+}
+.textBox{
+	font-family: '微软雅黑';
+	width:100%;
+	height: 32px;
+	float:right;
+	font-size: 16px;
+	border:none;
+	border-radius: 4px;
 
-		margin-top: -4px;
+	margin-top: -4px;
 
-		padding-left: 4px;
-		padding-right: 4px;
-		background-color:rgba(56,247,138,0.8);
+	padding-left: 4px;
+	padding-right: 4px;
+	background-color:rgba(56,247,138,0.8);
 
-		-moz-box-sizing: border-box;  /*Firefox3.5+*/
-		-webkit-box-sizing: border-box; /*Safari3.2+*/
-		-o-box-sizing: border-box; /*Opera9.6*/
-		-ms-box-sizing: border-box; /*IE8*/
-		box-sizing: border-box;
-	}
-		#info{
-			margin-top: 4px;
-			width:100%;
-			height: auto;
-			line-height:24px;
-			resize:none;
-		}
+	-moz-box-sizing: border-box;  /*Firefox3.5+*/
+	-webkit-box-sizing: border-box; /*Safari3.2+*/
+	-o-box-sizing: border-box; /*Opera9.6*/
+	-ms-box-sizing: border-box; /*IE8*/
+	box-sizing: border-box;
+}
+#info{
+	margin-top: 4px;
+	width:100%;
+	height: auto;
+	line-height:24px;
+	resize:none;
+}
 
-    select{
-        background: url(../img/select.png) no-repeat right;
-		background-size: 24px 24px;
-		background-origin: content-box;
-	    overflow: hidden;
-        appearance: none;
-        -moz-appearance: none;
-        -webkit-appearance: none;
-    }
+select{
+	background: url("../img/select.png") no-repeat right;
+	background-size: 24px 24px;
+	background-origin: content-box;
+	overflow: hidden;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
 
-	.fail{
-		color:#CC0000;
-		background-color:transparent;
-		font-style:italic;
-	}
-	.fail-div{
-		color:#CC0000;
-		background-color:rgba(255,128,128,0.25);
-	}
+.fail{
+	color:#CC0000;
+	background-color:transparent;
+	font-style:italic;
+}
+.fail-div{
+	color:#CC0000;
+	background-color:rgba(255,128,128,0.25);
+}
 
 #buttons{
 	margin-left:10%;
@@ -155,56 +154,40 @@ body{
 	height: 42px;
 	padding-bottom: 14px;
 }
-	button{
-		font-family: MainFont;
-		background-color:rgb(248, 181, 81);
-    	color: rgb(86,86,86);
-		/*
-		border-color:#000000;
-		border-top-color:#737373;
-		border-left-color:#737373;
-		*/
-		border: none;
-		border-radius:8px;
-		padding-top: 4px;
-		padding-bottom: 4px;
-		width: 40%;
-		height: 42px;
-		font-size:22px;
-		transition: background-color 0.4s, color 0.4s;
-	}
-		button:active{
-			/*border-color: rgb(143, 202, 155);*/
-			background-color:rgba(248, 181, 81,0.75);
-			color: rgb(252, 243, 243);
-		}
-		.left{
-			float: left;
-		}
-		.right{
-			float: right;
-		}
-	.tips{
-		font-size:16px;
-		width:100%;
-	}
+button{
+	font-family: MainFont;
+	background-color:rgb(248, 181, 81);
+	color: rgb(86,86,86);
+	border: none;
+	border-radius:4px;
+	padding-bottom: 4px;
+	width: 40%;
+	height: 42px;
+	font-size:22px;
+}
+button:active{
+	background-color:rgba(248, 181, 81,0.75);
+	color: rgb(252, 243, 243);
+}
+.left{
+	float: left;
+}
+.right{
+	float: right;
+}
+.tips{
+	font-size:16px;
+	width:100%;
+}
 
 .hidden {
 	display:none;
-}/*
-.centerer {
-	display:flex;
-}*/
+}
+
 @media screen and (max-width: 600px){
 	body{width:auto;}
 }
 @media screen and (max-width: 450px){
-	/*
-	.field{font-size:18px;}
-	.textBox{font-size:14px;}
-	.tips{font-size:14px;}
-	button{font-size:18px;}*/
-	
 	.field{
 		font-size:18px;
 		height: 28px;
@@ -229,12 +212,6 @@ body{
 	}
 }
 @media screen and (max-width: 400px){
-	/*
-	.field{font-size:16px;}
-	.textBox{font-size:12px;}
-	.tips{font-size:12px;}
-	button{font-size:16px;}*/
-
 	.field{
 		font-size:16px;
 		height: 24px;
@@ -259,12 +236,6 @@ body{
 	}
 }
 @media screen and (max-width: 350px){
-	/*
-	.field{font-size:14px;}
-	.textBox{font-size:10px;}
-	.tips{font-size:10px;}
-	button{font-size:14px;}*/
-
 	.field{
 		font-size:14px;
 		height: 20px;

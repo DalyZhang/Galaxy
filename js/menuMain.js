@@ -9,7 +9,7 @@ RJO.Menu.Recr = $("#recr");
 RJO.Menu.Quer = $("#quer");
 
 RJO.Menu.Head = $("#headBar");
-RJO.Menu.BBT = $("#bbt");
+RJO.Menu.BBT = $("#tStar");
 
 
 
@@ -21,14 +21,14 @@ RJO.Menu.BBT.click(gotoGame.bind(this));
 
 // Main process
 function gotoIntroduction(){
-	window.location.assign("introduction.html");
+	window.location.assign("introduction.php");
 }
 function gotoRecruit(){
-	window.location.assign("recruit.html");
+	window.location.assign("recruit.php");
 }
 function gotoQuery(){
-	window.location.assign("query.html");
+	window.location.assign("query.php");
 }
 function gotoGame(){
-	window.location.assign("game.html");
+	window.location.assign("game.php");
 }

@@ -326,10 +326,10 @@ RJO.Query.Back.click(gotoMenu.bind(this));
 
 // Main process
 function gotoRecruit(){	
-	window.location.replace("recruit.html");
+	window.location.replace("recruit.php");
 }
 function gotoMenu(){
-	window.open("index.html", "_self");
+	window.open("index.php", "_self");
 }
 
 function doQuery(name, tele){

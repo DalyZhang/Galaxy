@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 <title>百步梯报名表</title>
-<link href="css/recruit.css" rel="stylesheet" type="text/css">
+<link href="css/recruit.css<?php echo("?" . time());?>" rel="stylesheet" type="text/css">
 </head>
 
 
@@ -13,7 +13,7 @@
 <globalization requestEncoding="gb2312" responseEncoding="gb2312">
     <script src="js/lib/jquery-3.2.1.min.js"></script>
 </globalization>
-<script src="js/loadingShow.js"></script>
+<script src="js/loadingShow.js<?php echo("?" . time());?>"></script>
 
 <div id="centerer" class="hidden">
     <div id="alert-window" class="hidden">	
@@ -33,7 +33,7 @@
     <input id="name" class="textBox" spellcheck="false" maxlength="15" placeholder="输入你的大名~"/>
     </div>
     <div class="field">
-    <div class="key">性别*</div>
+    <div class="key">性别</div>
         <div class="radioBox" id="gender"> 
             <div class="radio">男
                 <input type="radio" id="g1" name="gender" value="1" checked/>
@@ -85,7 +85,7 @@
     </div>
     <div id="d" class="field">
     <div class="key">宿舍*</div>
-    <input id="dorm" class="textBox" spellcheck="false" placeholder="按照Cx xxx格式输入 如 C10 548"/>
+    <input id="dorm" class="textBox" spellcheck="false" placeholder="格式为Cx-xxx（例：C10-548）"/>
     </div>
     <div id="t" class="field">
     <div class="key">手机*</div>
@@ -138,7 +138,7 @@
     </div>
 
     <div class="field"><div class="key">自我介绍</div></div>
-    <textarea name="info" rows="4" wrap="hard" class="textBox" id="info" spellcheck="false" maxlength="100" placeholder="展示一下自己吧~(100字以内)"></textarea>
+    <textarea name="info" rows="4" wrap="hard" class="textBox" id="info" spellcheck="false" maxlength="100" placeholder="展示一下自己吧~（100字以内）"></textarea>
 
     <div class="tips">注意：带*的为必填项哦~</div>
 </div>
@@ -146,7 +146,7 @@
     <button id="submit" class="left">提交</button>
     <button id="back" class="right">返回</button>
 </div>
-<script src="js/recruitMain.js"></script>
+<script src="js/recruitMain.js<?php echo("?" . time());?>"></script>
 </body>
 
 </html>

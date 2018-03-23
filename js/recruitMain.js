@@ -138,15 +138,15 @@ RJO.Recruit.AlertBack.click(closeAlert.bind(this));
 function gotoQuery(){
 	var href;
 	if(RJO.Recruit.QueryTele)
-		href ="query.html?name="+encodeURI(RJO.Recruit.QueryName)+" tele="+RJO.Recruit.QueryTele+"";
+		href ="query.php?name="+encodeURI(RJO.Recruit.QueryName)+" tele="+RJO.Recruit.QueryTele+"";
 	else 
-		href = "query.html";
+		href = "query.php";
 	//href = encodeURI(encodeURI(href));
 	RJO.Recruit.QueryTele = RJO.Recruit.QueryName = null;
 	window.location.replace(href);
 }
 function gotoMenu(){
-	window.open("index.html", "_self");
+	window.open("index.php", "_self");
 }
 
 function validAll(){

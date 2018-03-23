@@ -11,7 +11,7 @@
 <globalization requestEncoding="gb2312" responseEncoding="gb2312">
     <script src="js/lib/jquery-3.2.1.min.js"></script>
 </globalization>
-<script src="js/loadingShow.js"></script>
+<script src="js/loadingShow.js<?php echo("?" . time());?>"></script>
 
 <div id="centerer" class="hidden">
     <div id="alert-window" class="hidden">	
@@ -154,7 +154,7 @@
     <button id="back" class="right">返回菜单</button>
     <button id="next" class="right hidden">前往报名</button>
 </div>
-<script src="js/queryMain.js"></script>
+<script src="js/queryMain.js<?php echo("?" . time());?>"></script>
 </body>
 
 </html>
