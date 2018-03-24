@@ -19,9 +19,6 @@ body{
 	max-height: 1024px;
 	min-width: 300px;
 }
-.hidden {
-	display:none;
-}
 .frame{
 	position: absolute;
 	left: 50%;
@@ -38,13 +35,13 @@ body{
 	color: rgba(255, 255, 255, 1);
 }
 h1{
-	font-size:45px;/**/
+	font-size:41px;/**/
 	margin:6px 0 6px 0;
 	text-align: center;
 	letter-spacing: 10px;/**/
 }
 p{
-	font-size:28px;/**/
+	font-size:25px;/**/
 	margin:6px;
 }
 .swiper-container {
@@ -82,18 +79,18 @@ p{
 }
 button{
 	position: relative;
-	float: left;
 	width: 260px;/**/
 	height:64px;/**/
-	color:rgba(121, 121, 121, 1);
-	background-color:rgba(56,247,138,1);
-	border: none;
+	color:rgba(255, 255, 255, 1);
+	background-color:rgba(30, 21, 76, 0.5);
+	border:rgba(255, 255, 255, 0.7) dashed 1px;
 	border-radius:4px;
 }
+#recr{float: left;}
 #back{float: right;}
 button:active{
-	background-color: rgba(35,155,87,1);
-	color: rgba(255, 255, 255, 1);
+	background-color:rgba(70, 60, 116, 0.5);
+	border-style: solid;
 }
 .icon{
 	position: absolute;
@@ -109,8 +106,8 @@ button:active{
 	right: 0;
 	transform: translateY(-50%);
 	width: 200px;
-	font-family:MainFont;
 	font-size:33px;
+	font-weight: bold;
 }
 .star{
 	position: absolute;
@@ -149,8 +146,8 @@ button:active{
 @media screen and (max-height: 900px)
 {
 	.frame{width: 600px}
-	h1{font-size:35px; letter-spacing: 10px}
-	p{font-size:25px}
+	h1{font-size:31.5px; letter-spacing: 10px}
+	p{font-size:22.5px}
 	.swiper-container{bottom: 74px}
 	#buttons{width:560px}
 	button{width: 240px;height: 56px}
@@ -163,11 +160,11 @@ button:active{
 }
 @media screen and (max-width: 600px)
 {
-	.frame{width: 95%}
-	h1{font-size:32px; letter-spacing: 8px}
-	p{font-size:22px}
+	.frame{width: 90%}
+	h1{font-size:29px; letter-spacing: 8px}
+	p{font-size:20px}
 	.swiper-container{bottom: 66px}
-	#buttons{width: 95%}
+	#buttons{width: 90%}
 	button{width: 45%;height: 48px}
 	.icon-text{width:75%;font-size:25px}
 	.star{top: 25px; width: 300px}
@@ -178,8 +175,8 @@ button:active{
 }
 @media screen and (max-width: 450px)
 {
-	h1{font-size:29px; letter-spacing: 7px}
-	p{font-size:20px}
+	h1{font-size:26px; letter-spacing: 7px}
+	p{font-size:18px}
 	.swiper-container{bottom: 62px}
 	button{width: 45%;height: 44px}
 	.icon-text{width: 75%;font-size:23px}
@@ -193,8 +190,8 @@ button:active{
 {
 	@media screen and (max-height:760px)
 	{
-		h1{font-size:26px; letter-spacing: 7px}
-		p{font-size:19px}
+		h1{font-size:23.5px; letter-spacing: 7px}
+		p{font-size:17px}
 		.swiper-container{bottom: 58px}
 		button{width: 45%;height: 40px}
 		.icon-text{width: 75%;font-size:20px;}
@@ -209,7 +206,7 @@ button:active{
 {
 	@media screen and (max-height:760px)
 	{
-		h1{font-size:24px; letter-spacing: 7px}
-		p{font-size:17px}
+		h1{font-size:21.5px; letter-spacing: 7px}
+		p{font-size:15.5px}
 	}
 }

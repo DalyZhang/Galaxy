@@ -78,23 +78,18 @@ function initFrames(){
 }
 function initSwiper(){
 	var swiper = new Swiper('.swiper-container', {
-		/*effect: 'cube',*/
-      	/*direction: 'vertical',*/
 		grabCursor: true,
-		/*cubeEffect: {
-			shadow: true,
-			slideShadows: true,
-			shadowOffset: 20,
-			shadowScale: 0.94,
-	},*//*
-		pagination: {
-			el: '.swiper-pagination',
-		},*/
-		/*navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-		},*/
-	});
+		on: {
+			slideNextTransitionStart: function()
+			{
+				var s = swiper.realIndex;
+				if(s < 8)
+				{
+					loadlist.eq(s - 1).attr("src", loadlist.eq(s - 1).attr("src-data"));
+				}
+			}
+		}
+	}), loadlist = $("img[src-data]");
 }
 //window.addEventListener("resize",refreshBoxPos);
 window.addEventListener("load",initForm);

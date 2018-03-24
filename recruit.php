@@ -1,33 +1,30 @@
-<!doctype html>
+<?php include "version.php";?>
+<!DOCTYPE html>
 <html>
 <head>
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
-<title>百步梯报名表</title>
-<link href="css/recruit.css<?php echo("?" . time());?>" rel="stylesheet" type="text/css">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>百步梯报名表</title>
+    <link href="css/recruit.css<?php echo($v);?>" rel="stylesheet" type="text/css"/>
 </head>
 
 
 <body bgcolor="#000000">
+<script src="js/loadingShow.js<?php echo($v);?>"></script>
 <globalization requestEncoding="gb2312" responseEncoding="gb2312">
     <script src="js/lib/jquery-3.2.1.min.js"></script>
 </globalization>
-<script src="js/loadingShow.js<?php echo("?" . time());?>"></script>
 
 <div id="centerer" class="hidden">
     <div id="alert-window" class="hidden">	
         <div id="alert-msg"></div>
-        <button id="alert-menu" class="alert-button hidden">返回主菜单</button>
-        <button id="alert-back" class="alert-button hidden">返回继续报名</button>
-        <button id="alert-quer" class="alert-button hidden">查看报名信息</button>
     </div>	
 </div>
 
 <div id="headBar">
-    <img id="logo" src="img/title.png">
+    
 </div>             
-<div id="main"> 
+<div id="main"> <img id="logo" src="img/title.png">
     <div id="n" class="field">
     <div class="key">名字*</div>
     <input id="name" class="textBox" spellcheck="false" maxlength="15" placeholder="输入你的大名~"/>
@@ -140,13 +137,13 @@
     <div class="field"><div class="key">自我介绍</div></div>
     <textarea name="info" rows="4" wrap="hard" class="textBox" id="info" spellcheck="false" maxlength="100" placeholder="展示一下自己吧~（100字以内）"></textarea>
 
-    <div class="tips">注意：带*的为必填项哦~</div>
+    <div class="tips">注意：带 * 的为必填项哦~</div>
 </div>
 <div id="buttons">
-    <button id="submit" class="left">提交</button>
-    <button id="back" class="right">返回</button>
+    <button id="submit"><img class="icon" src="img/write.png<?php echo($v);?>"/><div class="icon-text">提交表格</div></button>
+    <button id="back"><img class="icon" src="img/back.png<?php echo($v);?>"/><div class="icon-text">返回主页</div></button>
 </div>
-<script src="js/recruitMain.js<?php echo("?" . time());?>"></script>
+<script src="js/recruitMain.js<?php echo($v);?>"></script>
 </body>
 
 </html>

@@ -56,8 +56,8 @@ RJO.Query.Next = $("#next");
 RJO.Query.Back = $("#back");
 RJO.Query.Form = {};
 RJO.Query.Data = {};
-RJO.Query.PHPPath1 = "php/quy.php";
-RJO.Query.PHPPath2 = "php/mdy.php";
+RJO.Query.PHPPath1 = "php/query.php";
+RJO.Query.PHPPath2 = "php/modify.php";
 
 // type: 'POST'  url: php path  
 // data: json    success: function to call back
@@ -329,6 +329,10 @@ function gotoRecruit(){
 	window.location.replace("recruit.php");
 }
 function gotoMenu(){
+	$.ajax({
+		type: "POST",
+		url: "php/back.php"
+	});
 	window.open("index.php", "_self");
 }
 

@@ -26,14 +26,10 @@ RJO.Recruit.Centerer = $("#centerer");
 RJO.Recruit.AlertWindow = $("#alert-window");
 RJO.Recruit.AlertMsg = $("#alert-msg");
 
-RJO.Recruit.AlertMenu = $("#alert-menu");
-RJO.Recruit.AlertQuer = $("#alert-quer");
-RJO.Recruit.AlertBack = $("#alert-back");
-
 RJO.Recruit.Submit = $("#submit");
 RJO.Recruit.Back = $("#back");
 RJO.Recruit.Form = {};
-RJO.Recruit.PHPPath = "php/reg.php";
+RJO.Recruit.PHPPath = "php/register.php";
 
 // type: 'POST'  url: php path  
 // data: json    success: function to call back
@@ -130,10 +126,6 @@ RJO.Recruit.makeForm();
 RJO.Recruit.Submit.click(submitRecruit.bind(this));
 RJO.Recruit.Back.click(gotoMenu.bind(this));
 
-RJO.Recruit.AlertMenu.click(gotoMenu.bind(this));
-RJO.Recruit.AlertQuer.click(gotoQuery.bind(this));
-RJO.Recruit.AlertBack.click(closeAlert.bind(this));
-
 // Main process
 function gotoQuery(){
 	var href;
@@ -229,9 +221,6 @@ function alertMessage(msg,auto,type){
 	msg = htmlEncodeJQ(msg);
 	var jalertW = RJO.Recruit.AlertWindow;
 	var jalertM = RJO.Recruit.AlertMsg;
-	RJO.Recruit.AlertMenu.addClass("hidden");
-	RJO.Recruit.AlertQuer.addClass("hidden");
-	RJO.Recruit.AlertBack.addClass("hidden");
 	
 	RJO.Recruit.Centerer.removeClass("hidden");
 	//RJO.Recruit.Centerer.addClass("centerer");

@@ -6,30 +6,27 @@ body{
 	background-image:url("../img/StarlitSky.png");
 	background-size:cover;
 }
-.hidden {
-	display:none;
-}
 #container{
 	position:absolute;
 	top:0;
 	left:0;
 	height:100%;
 	width:100%;
-	max-height: 800px;
+	max-height: 900px;
 	min-height: 460px;
 }
 .headBar{
 	position: absolute;
 	top: 10%;
 	left: 50%;
-	width:250px;
+	width:300px;
 	transform: translateX(-50%);
 }
 #tStar{
 	position: absolute;
 	top:0;
 	left:0;
-	width:250px;/**/
+	width:300px;/**/
 	z-index: 1;
 	animation: updown 4s infinite;
 }
@@ -38,7 +35,7 @@ body{
 	position: absolute;
 	top:0;
 	left:0;
-	width:250px;/**/
+	width:300px;/**/
 	z-index: 2;
 	opacity: 0;
 	animation: eye 12s infinite;
@@ -48,7 +45,7 @@ body{
 	position: absolute;
 	left: -105px;
 	top:20px;
-	width: 90px;
+	width: 108px;
 	opacity: 0.95;
 	animation: updown 3s -0.3s infinite;
 }
@@ -56,8 +53,8 @@ body{
 {
 	position: absolute;
 	right: -140px;
-	top: 200px;
-	width: 90px;
+	top: 250px;
+	width: 108px;
 	opacity: 0.9;
 	animation: updown 2s -1.2s infinite;
 }
@@ -66,7 +63,7 @@ body{
 	position: absolute;
 	right: -25px;
 	top: -30px;
-	width: 50px;
+	width: 60px;
 	opacity: 0.8;
 	animation: updown 3s -0.2s infinite;
 }
@@ -74,8 +71,8 @@ body{
 {
 	position: absolute;
 	left: -60px;
-	top: 250px;
-	width: 75px;
+	top: 300px;
+	width: 90px;
 	opacity: 0.85;
 	animation: updown 4s -1.8s infinite;
 }
@@ -91,15 +88,15 @@ button{
 	display:block;
 	width:320px;/**/
 	height:64px;
-	color:rgba(121, 121, 121, 1);
-	background-color:rgba(56,247,138,1);
-	border:none;
+	color:rgba(255, 255, 255, 1);
+	background-color:rgba(30, 21, 76, 0.5);
+	border:rgba(255, 255, 255, 0.7) dashed 1px;
 	border-radius:4px;
 	margin-bottom:10%;
 }
 button:active{
-	background-color:rgba(35,155,87,1);
-	color:rgba(255, 255, 255, 1);
+	background-color:rgba(70, 60, 116, 0.5);
+	border-style: solid;
 }
 .icon{
 	position: absolute;
@@ -114,11 +111,11 @@ button:active{
 }
 .icon-text
 {
+	font-weight: bold;
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
 	width: 262px;/**/
-	font-family:MainFont;
 	font-size:33px;/**/
 	right: 0;
 }
@@ -147,217 +144,97 @@ button:active{
 
 @media screen and (max-width: 500px)
 {
-	.star-deathstar
-	{
-		left: -75px;
-	}
-	.star-edit
-	{
-		right: -90px;
-	}
-	.star-video
-	{
-		left: -60px;
-	}
-	.star-plan
-	{
-		right: -25px;
-	}
+	.star-deathstar{left: -75px;}
+	.star-edit{right: -90px;}
+	.star-video{left: -60px;}
+	.star-plan{right: -25px;}
 }
 @media screen and (max-width: 400px)
 {
-	.star-deathstar
-	{
-		left: -60px;
-	}
-	.star-edit
-	{
-		right: -75px;
-	}
-	.star-video
-	{
-		left: -45px;
-	}
+	.star-deathstar{left: -60px;}
+	.star-edit{right: -75px;}
+	.star-video{left: -45px;}
 }
 @media screen and (max-width: 350px)
 {
-	.star-deathstar
-	{
-		left: -50px;
-	}
-	.star-edit
-	{
-		right: -55px;
-	}
-	.star-video
-	{
-		left: -25px;
-	}
+	.star-deathstar{left: -50px;}
+	.star-edit{right: -55px;}
+	.star-video{left: -25px;}
+}
+@media screen and (max-height: 900px)
+{
+	.star-deathstar{top:20px;width: 90px;}
+	.star-edit{top: 200px;width: 90px;}
+	.star-video{top: 250px;width: 75px;}
+	.star-plan{top: -30px;width: 50px;}
+	.headBar{top: 10%;width:250px;}
+	#tStar{width:250px;}
+	#tStarE{width:250px;}
+	#main{width: 320px;top: 57%;}
+	button{width:320px;height:64px;}
+	.icon-text{width: 262px;font-size:33px;}
 }
 @media screen and (max-height: 750px)
 {
-	.star-deathstar
-	{
-		top:20px;
-		width: 70px;
-	}
-	.star-edit
-	{
-		top: 190px;
-		width: 70px;
-	}
-	.star-video
-	{
-		top: 220px;
-		width: 58px;
-	}
-	.star-plan
-	{
-		top: -30px;
-		width: 38.4px;
-	}
-	.headBar
-	{
-		top: 9%;
-		width:192px;
-	}
-	#tStar{
-		width:192px;
-	}
-	#tStarE{
-		width:192px;
-	}
-	#main{
-		width: 280px;
-		top: 55%;
-	}
-	button{
-		width:280px;
-		height:64px;
-	}
-	.icon-text
-	{
-		width: 232px;
-		font-size:29px;
-	}
+	.star-deathstar{top:20px;width: 70px;}
+	.star-edit{top: 190px;width: 70px;}
+	.star-video{top: 220px;width: 58px;}
+	.star-plan{top: -30px;width: 38.4px;}
+	.headBar{top: 9%;width:192px;}
+	#tStar{width:192px;}
+	#tStarE{width:192px;}
+	#main{width: 280px;top: 55%;}
+	button{width:280px;height:64px;}
+	.icon-text{width: 232px;font-size:29px;}
+}
+@media screen and (max-height: 750px)
+{
+	.star-deathstar{top:20px;width: 70px;}
+	.star-edit{top: 190px;width: 70px;}
+	.star-video{top: 220px;width: 58px;}
+	.star-plan{top: -30px;width: 38.4px;}
+	.headBar{top: 9%;width:192px;}
+	#tStar{width:192px;}
+	#tStarE{width:192px;}
+	#main{width: 280px;top: 55%;}
+	button{width:280px;height:64px;}
+	.icon-text{width: 232px;font-size:29px;}
 }
 
 @media screen and (max-height: 700px)
 {
-	.star-deathstar
-	{
-		top:10px;
-	}
-	.star-edit
-	{
-		top: 200px;
-	}
-	.star-video
-	{
-		top: 200px;
-	}
-	.star-plan
-	{
-		top: -20px;
-	}
-	.headBar
-	{
-		top: 8%;
-		width:187.5px;
-	}
-	#tStar{
-		width:187.5px;
-	}
-	#tStarE{
-		width:187.5px;
-	}
-	#main{
-		width: 265px;
-		top: 53%;
-	}
-	button{
-		width:265px;
-		height:58px;
-	}
-	.icon-text
-	{
-		width: 207px;
-		font-size:28px;
-	}
+	.star-deathstar{top:10px;}
+	.star-edit{top: 200px;}
+	.star-video{top: 200px;}
+	.star-plan{top: -20px;}
+	.headBar{top: 8%;width:187.5px;}
+	#tStar{width:187.5px;}
+	#tStarE{width:187.5px;}
+	#main{width: 265px;top: 53%;}
+	button{width:265px;height:58px;}
+	.icon-text{width: 207px;font-size:28px;}
 }
 
 @media screen and (max-height: 600px)
 {
-	.star-deathstar
-	{
-		top:0;
-		width: 60px;
-	}
-	.star-edit
-	{
-		top: 175px;
-		width: 60px;
-	}
-	.star-video
-	{
-		top: 180px;
-		width: 50px;
-	}
-	.star-plan
-	{
-		top: -15px;
-		width: 32px;
-	}
-	.headBar
-	{
-		top: 7%;
-		width:175px;
-	}
-	#tStar{
-		width:175px;
-	}
-	#tStarE{
-		width:175px;
-	}
-	#main{
-		width: 250px;
-		top: 54%;
-	}
-	button{
-		width:250px;
-		height:52px;
-	}
-	.icon-text
-	{
-		width: 192px;
-		font-size:26px;
-	}
+	.star-deathstar{top:0;width: 60px;}
+	.star-edit{top: 175px;width: 60px;}
+	.star-video{top: 180px;width: 50px;}
+	.star-plan{top: -15px;width: 32px;}
+	.headBar{top: 7%;width:175px;}
+	#tStar{width:175px;}
+	#tStarE{width:175px;}
+	#main{width: 250px;top: 54%;}
+	button{width:250px;height:52px;}
+	.icon-text{width: 192px;font-size:26px;}
 }
 
 @media screen and (max-height: 500px)
 {
-	.headBar
-	{
-		top: 6%;
-		width:162.5px;
-	}
-	#tStar{
-		width:162.5px;
-	}
-	#tStarE{
-		width:162.5px;
-	}
-	#main{
-		width: 235px;
-		top: 54%;
-	}
-	button{
-		width:235px;
-		height:48px;
-	}
-	.icon-text
-	{
-		width: 177px;
-		font-size:24px;
-	}
+	.headBar{top: 6%;width:162.5px;}
+	#tStar{width:162.5px;}
+	#tStarE{width:162.5px;}
+	#main{width: 235px;top: 54%;}
+	button{width:235px;height:48px;}
+	.icon-text{width: 177px;font-size:24px;}
 }
