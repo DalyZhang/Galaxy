@@ -1,55 +1,44 @@
 <?php
-    include "global.php";
-    include "connect.php";
+    include_once "global.php";
+    include_once "config.php";
+    include_once "class/DataRev.php";
 
     $rtn["type"] = 0;
     
-    if(isset($_POST["data"]))
+    $rev = new DataRev;
+    $rev->initQuery("name", "tele");
+    
+    try
     {
-        $data = new DataRev;
-        $data->queryInit($_POST["data"]);
+        $con = new PDO($config["dsn"], $config["user"], $config["password"]);
     }
-    else
+    catch (PDOException $e)
     {
-        exitData();
+        exit_with_data();
     }
+    $con->query("SET NAMES UTF8");
 
-    $datacon = new DataConnect();
-    $con = $datacon->con();
-    if(!$con)
+    $stm = $con->prepare("SELECT * FROM {$config["table"]} WHERE `tele` = ?");
+    $stm->execute([$rev->data["tele"]]);
+
+    if($stm->rowCount())
     {
-        exitData();
-    }
-    mysqli_query($con, "SET NAMES UTF8");
-
-    $stm = mysqli_prepare($con, "SELECT * FROM {$datacon->table} WHERE `tele` = ?");
-    mysqli_stmt_bind_param($stm, "s", $data->tele);
-    mysqli_stmt_execute($stm);
-    $rst = mysqli_stmt_get_result($stm);
-
-    if(mysqli_num_rows($rst))
-    {
-        $info = mysqli_fetch_assoc($rst);
-        if($info["name"] === $data->name)
+        $info = $stm->fetch(PDO::FETCH_ASSOC);
+        if($info["name"] === $rev->data["name"])
         {
             $rtn["type"] = 1;
             $rtn["info"] = $info;
             $rtn["info"]["name"] = htmlspecialchars($rtn["info"]["name"]);
             $rtn["info"]["info"] = htmlspecialchars($rtn["info"]["info"]);
             session_start();
-            $_SESSION["tel"] = $data->tele;
+            $_SESSION["tele"] = $rev->data["tele"];
             unset($rtn["info"]["time_s"]);
             unset($rtn["info"]["id"]);
-            exitData();
         }
         else
         {
             $rtn["type"] = 2;
-            exitData();
         }
     }
-    else
-    {
-        exitData();
-    }
+    exit_with_data();
 ?>

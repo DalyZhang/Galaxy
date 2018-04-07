@@ -1,45 +1,37 @@
 <?php
-    include "global.php";
-    include "connect.php";
+    include_once "global.php";
+    include_once "config.php";
+    include_once "class/DataRev.php";
 
     $rtn["type"] = 0;
 
-    if(isset($_POST["data"]))
-    {
-        $data = new DataRev;
-        $data->registerInit($_POST["data"]);
-    }
-    else
-    {
-        exitData();
-    }
+    $rev = new DataRev;
+    $rev->initRegister("name", "gender", "school", "dorm", "tele", "first", "second", "obey", "info");
 
-    $datacon = new DataConnect();
-    $con = $datacon->con();
-    if(!$con)
+    try
     {
-        exitData();
+        $con = new PDO($config["dsn"], $config["user"], $config["password"]);
     }
-    mysqli_query($con, "SET NAMES UTF8");
+    catch (PDOException $e)
+    {
+        exit_with_data();
+    }
+    $con->query("SET NAMES UTF8");
 
-    $stm = mysqli_prepare($con, "SELECT `tele` FROM {$datacon->table} WHERE `tele` = ?");
-    mysqli_stmt_bind_param($stm, "s", $tel);
-    mysqli_stmt_execute($stm);
-    if(mysqli_num_rows(mysqli_stmt_get_result($stm)))
+    $stm = $con->prepare("SELECT `tele` FROM {$config["table"]} WHERE `tele` = ?");
+    $stm->execute([$rev->data["tele"]]);
+    if($stm->rowCount())
     {
         $rtn["type"] = 2;
-        exitData();
+        exit_with_data();
     }
 
-    mysqli_stmt_free_result($stm);
-    $stm = mysqli_prepare($con, "INSERT INTO {$datacon->table} (`name`, `gender`, `school`, `dorm`, `tele`, `first`, `second`, `obey`, `info`, `time_s`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    mysqli_stmt_bind_param($stm, "siissiiisi", $data->name, $data->gender, $data->school, $data->dorm, $data->tele, $data->first, $data->second, $data->obey, $data->info, $time);
-    date_default_timezone_set("Asia/Shanghai");
-    $time = time();
-    mysqli_stmt_execute($stm);
+    $stm->closeCursor();
+    $stm = $con->prepare("INSERT INTO {$config["table"]} (`name`, `gender`, `school`, `dorm`, `tele`, `first`, `second`, `obey`, `info`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stm->execute(array_values($rev->data));
 
     session_start();
-    $_SESSION["tel"] = $data->tele;
+    $_SESSION["tele"] = $rev->data["tele"];
     $rtn["type"] = 1;
-    exitData();
+    exit_with_data();
 ?>

@@ -1,50 +1,44 @@
 <?php
-    include "global.php";
-    include "connect.php";
+    include_once "global.php";
+    include_once "config.php";
+    include_once "class/DataRev.php";
 
     $rtn["type"] = 0;
 
     session_start();
-    if(!isset($_SESSION["tel"]))
+    if(!isset($_SESSION["tele"]))
     {
-        exitData();
+        exit_with_data();
     }
     
-    if(isset($_POST["data"]))
-    {
-        $data = new DataRev;
-        $data->registerInit($_POST["data"]);
-    }
-    else
-    {
-        exitData();
-    }
+    $rev = new DataRev;
+    $rev->initRegister("name", "gender", "school", "dorm", "tele", "first", "second", "obey", "info");
 
-    $datacon = new DataConnect();
-    $con = $datacon->con();
-    if(!$con)
+    try
     {
-        exitData();
+        $con = new PDO($config["dsn"], $config["user"], $config["password"]);
     }
-    mysqli_query($con, "SET NAMES UTF8");
-
-    if($_SESSION["tel"] !== $data->tele)
+    catch (PDOException $e)
     {
-        $stm = mysqli_prepare($con, "SELECT * FROM {$datacon->table} WHERE `tele` = ?");
-        mysqli_stmt_bind_param($stm, "s", $data->tele);
-        mysqli_stmt_execute($stm);
-        if(mysqli_num_rows(mysqli_stmt_get_result($stm)))
+        exit_with_data();
+    }
+    $con->query("SET NAMES UTF8");
+
+    if($_SESSION["tele"] !== $rev->data["tele"])
+    {
+        $stm = $con->prepare("SELECT * FROM {$config["table"]} WHERE `tele` = ?");
+        $stm->execute([$rev->data["tele"]]);
+        if($stm->rowCount())
         {
             $rtn["type"] = 2;
-            exitData();
+            exit_with_data();
         }
-        mysqli_stmt_free_result($stm);
+        $stm->closeCursor();
     }
 
-    $stm = mysqli_prepare($con, "UPDATE {$datacon->table} SET `name` = ?, `gender` = ?, `school` = ?, `dorm` = ?, `tele` = ?, `first` = ?, `second` = ?, `obey` = ?, `info` = ? WHERE `tele` = ?");
-    mysqli_stmt_bind_param($stm, "siissiiiss", $data->name, $data->gender, $data->school, $data->dorm, $data->tele, $data->first, $data->second, $data->obey, $data->info, $_SESSION["tel"]);
-    mysqli_stmt_execute($stm);
-    $_SESSION["tel"] = $data->tele;
+    $stm = $con->prepare("UPDATE {$config["table"]} SET `name` = ?, `gender` = ?, `school` = ?, `dorm` = ?, `tele` = ?, `first` = ?, `second` = ?, `obey` = ?, `info` = ? WHERE `tele` = ?");
+    $stm->execute(array_values($rev->data + [$_SESSION["tele"]]));
+    $_SESSION["tele"] = $rev->data["tele"];
     $rtn["type"] = 1;
-    exitData();
+    exit_with_data();
 ?>
