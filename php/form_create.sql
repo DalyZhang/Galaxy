@@ -10,6 +10,6 @@ CREATE TABLE `app_form` (
 	`second` tinyint(4) NOT NULL,
 	`obey` tinyint(1) NOT NULL,
 	`info` varchar(100) COLLATE utf8_bin NOT NULL,
-	`time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+	`time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=0;
