@@ -337,7 +337,7 @@ function gotoMenu(){
 }
 
 function doQuery(name, tele){
-	RJO.Query.Tele.removeClass("hidden");
+	//RJO.Query.Tele.removeClass("hidden");
 	var send = {name:name,tele:tele};
 
 	RJO.Query.SendAJAX1("POST", send, RJO.Query.dealData);
