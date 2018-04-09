@@ -3,7 +3,7 @@
     class DataRev
     {
         public $data;
-        public function checkFormat($a)
+        private function checkFormat($a)
         {
             if (isset($_POST["data"]))
             {
