@@ -3,8 +3,16 @@
     class DataRev
     {
         public $data;
-        private static function isFormat($s)
+        public function checkFormat($a)
         {
+            if (isset($_POST["data"]))
+            {
+                $rev = json_decode($_POST["data"], true);
+            }
+            else
+            {
+                exit_with_data();
+            }
             $f = 
             [
                 "name" => function($s) {return is_string($s) && strlen($s) > 0 && mb_strlen($s, "utf-8") < 16;},
@@ -17,21 +25,9 @@
                 "obey" => function($i) {return is_int($i) && $i > -1 && $i < 2;},
                 "info" => function($s) {return is_string($s) && mb_strlen($s, "utf-8") < 101;}
             ];
-            return $f[$s];
-        }
-        public function checkFormat($a)
-        {
-            if (isset($_POST["data"]))
-            {
-                $rev = json_decode($_POST["data"], true);
-            }
-            else
-            {
-                exit_with_data();
-            }
             foreach ($a as $s)
             {
-                if (isset($rev[$s]) && self::isFormat($s)($rev[$s]))
+                if (isset($rev[$s]) && $f[$s]($rev[$s]))
                 {
                     $this->data[$s] = $rev[$s];
                 }
